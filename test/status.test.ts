@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import packageJson from '../../package.json';
+import packageJson from '../package.json';
 import { statusHandler } from '../src/functions/status';
 
 test('statusHandler reports the project version', () => {
