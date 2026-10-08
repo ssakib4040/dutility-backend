@@ -10,7 +10,7 @@
     "clean": "rimraf dist",
     "prestart": "npm run clean && npm run build",
     "storage": "azurite --silent --location .azurite --debug .azurite/debug.log",
-    "dev": "npm run clean && npm run build && cross-env FORCE_COLOR=1 concurrently --kill-others-on-fail --prefix-colors \"cyan,magenta\" \"npm run watch\" \"npm run functions\"",
+    "dev": "rimraf dist && tsc && cross-env FORCE_COLOR=1 concurrently --kill-others-on-fail --names \"typescript,functions,azurite\" --prefix-colors \"cyan,magenta,blue\" \"tsc -w\" \"func start\" \"azurite --silent --location .azurite --debug .azurite/debug.log\"",
     "start": "func start",
     "functions": "func start",
     "start:verbose": "func start --verbose",
