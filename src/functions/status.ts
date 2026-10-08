@@ -8,7 +8,7 @@ export function statusHandler(): HttpResponseInit {
       "cache-control": "no-store",
     },
     jsonBody: {
-      status: "okk",
+      status: "ok - updated",
       version: packageJson.version,
     },
   };

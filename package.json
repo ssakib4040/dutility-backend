@@ -10,7 +10,9 @@
     "clean": "rimraf dist",
     "prestart": "npm run clean && npm run build",
     "storage": "azurite --silent --location .azurite --debug .azurite/debug.log",
+    "dev": "npm run clean && npm run build && concurrently --kill-others-on-fail \"npm run watch\" \"npm run functions\"",
     "start": "func start",
+    "functions": "func start",
     "start:verbose": "func start --verbose",
     "lint": "tsc --noEmit",
     "test": "npm run build && node --test dist/test/status.test.js",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@types/node": "^22.x",
     "azurite": "^3.37.0",
+    "concurrently": "^9.2.1",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.0"
   },
