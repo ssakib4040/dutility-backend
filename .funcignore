@@ -1,9 +1,16 @@
 *.js.map
 .git*
 .vscode
+.azure
+infra
+AGENTS.md
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE.md
+README.md
 __azurite_db*__.json
 __blobstorage__
 __queuestorage__
-local.settings.json
+local.settings*.json
 test
 node_modules
