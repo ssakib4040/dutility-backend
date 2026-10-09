@@ -15,7 +15,7 @@
     "functions": "func start",
     "start:verbose": "func start --verbose",
     "lint": "tsc --noEmit",
-    "test": "npm run build && node --test dist/test/status.test.js",
+    "test": "npm run build && node --test dist/test/status.test.js dist/test/mobile-status.test.js",
     "check": "npm run lint && npm test"
   },
   "dependencies": {

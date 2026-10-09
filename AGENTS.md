@@ -6,10 +6,14 @@ This repository contains the Azure Functions API for Dutility. It uses the Node.
 
 - Keep HTTP functions under `src/functions/` and register them from `src/index.ts`.
 - Keep routes explicit and stable. The project removes Azure Functions' default `/api` prefix.
+- Keep the API surfaces separate: web uses `GET /status`, while the Expo/mobile app uses `GET /mobile/status`.
+- Register web and mobile routes as distinct Functions. Do not merge them or change the mobile prefix without updating the app and this document.
+- Do not add backend `.env` files for runtime configuration. Azure Functions settings belong in `local.settings.json` locally and Azure App Settings in production.
 - Read the application version from `package.json`; do not duplicate it in function source.
 - Never commit `local.settings.json`, Azure credentials, connection strings, function keys, or third-party API keys.
 - Never expose secrets through `EXPO_PUBLIC_*` variables.
 - Do not add conversion endpoints until their input limits, output format, failure behavior, retention policy, and processing engine are defined.
+- The first two conversion modules are `pdf-to-word` and `pdf-to-image`; their mobile API routes must remain under `/mobile/` and must not be confused with the web health API.
 - Do not embed Azure function keys in the Expo app. Public mobile endpoints require application-level authentication and rate limiting when sensitive or costly behavior is added.
 - Prefer managed identity for Azure resources.
 

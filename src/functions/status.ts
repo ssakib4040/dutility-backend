@@ -1,17 +1,9 @@
-import { app, type HttpResponseInit } from "@azure/functions";
-import packageJson from "../../package.json";
+import { app, type HttpResponseInit } from '@azure/functions';
+
+import { createStatusResponse } from './status-response';
 
 export function statusHandler(): HttpResponseInit {
-  return {
-    status: 200,
-    headers: {
-      "cache-control": "no-store",
-    },
-    jsonBody: {
-      status: "ok",
-      version: packageJson.version,
-    },
-  };
+  return createStatusResponse();
 }
 
 app.http("status", {

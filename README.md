@@ -1,6 +1,6 @@
 # Dutility backend
 
-Azure Functions v4 API for Dutility. The project currently exposes one public status endpoint and is the foundation for future conversion jobs.
+Azure Functions v4 API for Dutility. The project currently exposes separate web and mobile status endpoints and is the foundation for future conversion jobs.
 
 ## Requirements
 
@@ -23,7 +23,9 @@ Run `npm run storage` in one terminal and `npm start` in another. The local API 
 
 ## API
 
-### `GET /status`
+### Web API: `GET /status`
+
+### Mobile API: `GET /mobile/status`
 
 Returns the service status and the version declared in `package.json`.
 

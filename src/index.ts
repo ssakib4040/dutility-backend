@@ -5,3 +5,4 @@ app.setup({
 });
 
 require('./functions/status');
+require('./functions/mobile-status');
